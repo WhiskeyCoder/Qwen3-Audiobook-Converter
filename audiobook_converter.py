@@ -444,7 +444,7 @@ class QwenAudiobookConverter:
 
     def _extract_txt(self, file_path: Path) -> str:
         """Extract from TXT with encoding detection"""
-        for encoding in ['utf-8', 'utf-16', 'latin-1', 'cp1252']:
+        for encoding in ['utf-8-sig', 'utf-16', 'latin-1', 'cp1252']:
             try:
                 with open(file_path, 'r', encoding=encoding) as f:
                     return self._clean_text(f.read())
